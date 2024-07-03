@@ -1,38 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Dosis', sans-serif;
+  font-size: 20px;
+}
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #333;
+  margin: 0 auto;
+  height: 100dvh;
+}
+.container {
+  display: grid;
+  padding: 5px;
+  width: 350px;
+  height: 500px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 3px 3px;
+  background: #000;
+  border: 1px solid purple;
+  border-radius: 8px;
+  grid-template-areas:
+    'operation operation operation operation'
+    'screen screen screen screen'
+    'clear clear divide multiply'
+    'seven eight nine subtract'
+    'four five six add'
+    'one two three equals'
+    'zero zero decimal equals';
+}
+.container > * {
+  display: flex;
+  color: white;
+  background: #222;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  border-bottom-right-radius: 8px;
+  cursor: pointer;
+  &:hover {
+    outline: 1px dashed white;
+    color: #000;
+  }
+}
+.operation {
+  grid-area: operation;
+  justify-content: right;
+  color: #ffd600;
+  background: black;
+  font-size: 25px;
+  cursor: auto;
+  letter-spacing: 2px;
+  padding-right: 5px;
+  overflow: hidden;
+  &:hover {
+    outline: none;
+    color: red;
+  }
 }
 
-.App-link {
-  color: #61dafb;
+.display {
+  grid-area: screen;
+  justify-content: right;
+  background: black;
+  font-size: 30px;
+  letter-spacing: 4px;
+  cursor: auto;
+  padding: 0 5px;
+  overflow: hidden;
+  &:hover {
+    outline: none;
+    color: #412;
+  }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.clear {
+  grid-area: clear;
+  background: #412;
+  letter-spacing: 2px;
+}
+
+.divide {
+  grid-area: divide;
+  background: #444;
+  font-size: 30px;
+}
+
+.multiply {
+  grid-area: multiply;
+  background: #444;
+  font-size: 30px;
+}
+
+.seven {
+  grid-area: seven;
+}
+
+.eight {
+  grid-area: eight;
+}
+
+.nine {
+  grid-area: nine;
+}
+
+.subtract {
+  grid-area: subtract;
+  background: #444;
+  font-size: 40px;
+  padding-bottom: 8px;
+}
+
+.four {
+  grid-area: four;
+}
+
+.five {
+  grid-area: five;
+}
+
+.six {
+  grid-area: six;
+}
+
+.add {
+  grid-area: add;
+  background: #444;
+  font-size: 40px;
+  padding-bottom: 8px;
+}
+
+.one {
+  grid-area: one;
+}
+
+.two {
+  grid-area: two;
+}
+
+.three {
+  grid-area: three;
+}
+
+.equals {
+  grid-area: equals;
+  background: #002560;
+  font-size: 50px;
+}
+
+.decimal {
+  grid-area: decimal;
+  font-size: 30px;
+}
+
+.zero {
+  grid-area: zero;
 }
